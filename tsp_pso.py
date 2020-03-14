@@ -1,17 +1,4 @@
 # encoding:utf-8
-
-'''
-	Solution for Travelling Salesman Problem using PSO (Particle Swarm Optimization)
-	Discrete PSO for TSP
-
-	References: 
-		http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.258.7026&rep=rep1&type=pdf
-		http://www.cs.mun.ca/~tinayu/Teaching_files/cs4752/Lecture19_new.pdf
-		http://www.swarmintelligence.org/tutorials.php
-
-	References are in the folder "references" of the repository.
-'''
-
 from operator import attrgetter
 import random, sys, time, copy
 
@@ -195,18 +182,6 @@ class PSO:
 	def getGBest(self):
 		return self.gbest
 
-
-	# shows the info of the particles
-	def showsParticles(self):
-
-		print('Showing particles...\n')
-		for particle in self.particles:
-			print('pbest: %s\t|\tcost pbest: %d\t|\tcurrent solution: %s\t|\tcost current solution: %d' \
-				% (str(particle.getPBest()), particle.getCostPBest(), str(particle.getCurrentSolution()),
-							particle.getCostCurrentSolution()))
-		print('')
-
-
 	def run(self):
 
 		# for each time step (iteration)
@@ -307,7 +282,6 @@ if __name__ == "__main__":
 	# creates a PSO instance
 	pso = PSO(graph, iterations=100, size_population=10, beta=1, alfa=0.9)
 	pso.run() # runs the PSO algorithm
-	pso.showsParticles() # shows the particles
 
 	# shows the global best particle
 	print('gbest: %s | cost: %d\n' % (pso.getGBest().getPBest(), pso.getGBest().getCostPBest()))
