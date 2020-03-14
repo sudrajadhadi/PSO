@@ -311,14 +311,3 @@ if __name__ == "__main__":
 
 	# shows the global best particle
 	print('gbest: %s | cost: %d\n' % (pso.getGBest().getPBest(), pso.getGBest().getCostPBest()))
-
-	'''
-	# random graph
-	print('Random graph...')
-	random_graph = CompleteGraph(amount_vertices=20)
-	random_graph.generates()
-	pso_random_graph = PSO(random_graph, iterations=10000, size_population=10, beta=1, alfa=1)
-	pso_random_graph.run()
-	print('gbest: %s | cost: %d\n' % (pso_random_graph.getGBest().getPBest(), 
-					pso_random_graph.getGBest().getCostPBest()))
-	'''
